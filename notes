@@ -1,0 +1,9 @@
+//  // make sure to add: "start": "node index.js" and "type": "module"," in package.json
+ 
+//  express () is an express object, which is stored in 'app'
+//  make sure you give it to a port: const port = 4001, and connect the app to the port via app.listen(port)
+
+// check that it works by using npm start which should return journal-api@1.00 etc
+//app object has a method that corresponds to each http method (GET, POST, etc): e.g. app.get() which tells it to accept a get route. first parameter is a url
+// rememeber we have two consoles: a server console, and a front end (react) console that will appear in the browser. Technically it will be two separate 'applications' that will communicate through a restful api.
+// always put in req, res for app.get commands
