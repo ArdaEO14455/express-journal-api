@@ -1,13 +1,22 @@
-import express, { response } from 'express'
 
-const categories = ['Food', 'Gaming', 'Coding', 'Other']
 
-const app = express() 
-const port = 4001
+import express from 'express'
+import { EntryModel, CategoryModel } from './db.js'
+import entryRoutes from './routes/entry_routes.js'
+import cors from 'cors'
 
-app.get('/', (request, response) => response.send({info: 'Journal API!'}))
+const app = express()
+const port = 4002
 
-app.get('/categories', (req, res) => res.status(204).send(categories))
+app.use(cors()) //this line allows all origins by default, unless specific origins are specified
+
+app.use(express.json())
+
+app.get('/', (request, response) => response.send({ info: 'Journal API!' }))
+
+app.get('/categories', async (req, res) => res.send( await CategoryModel.find()))
+
+app.use('/entries', entryRoutes)
 
 app.listen(port)
 

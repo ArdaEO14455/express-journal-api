@@ -7,3 +7,10 @@
 //app object has a method that corresponds to each http method (GET, POST, etc): e.g. app.get() which tells it to accept a get route. first parameter is a url
 // rememeber we have two consoles: a server console, and a front end (react) console that will appear in the browser. Technically it will be two separate 'applications' that will communicate through a restful api.
 // always put in req, res for app.get commands
+
+
+//Mongodb Notes:
+// when putting in documents into mongo, it must be an object, with key-value pairs. in turn, each object will be added under 'documnets'
+// remember:
+//db.categories
+//db.getCollection('categories')
