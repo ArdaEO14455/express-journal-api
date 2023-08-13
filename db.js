@@ -3,12 +3,10 @@ import dotenv from 'dotenv'
 
 dotenv.config()
 
-
 async function dbClose() {
   await mongoose.connection.close()
-  console.log('Database Disconnected')
+  console.log('Database disconnected')
 }
-
 
 // remember, 'Journal' is the database, 'categories' is the 'collection'
 mongoose.connect(process.env.ATLAS_DB_URL)
@@ -16,12 +14,14 @@ mongoose.connect(process.env.ATLAS_DB_URL)
   .catch(err => console.error(err))
 
 
+
   //Entry Schema
 //in the schema we specify the fields of a model, what data types each field can take, if its required, if there is a default etc.  
 const entrySchema = new mongoose.Schema({
-  category: { type: mongoose.ObjectId, ref: 'Category'}, //this is a reference and is used instead of embedding 
+  category: { type: mongoose.ObjectId, ref: 'Category' },
   content: { type: String, required: true }
 })
+
 
 // Entry Model
 //a new model must be created with the schema specified

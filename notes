@@ -14,3 +14,9 @@
 // remember:
 //db.categories
 //db.getCollection('categories')
+// start test with npm test
+
+//deployment Order:
+// Database (already deployed as the database is on a cloud server)
+// API - Deployed on Railway
+// Front End
